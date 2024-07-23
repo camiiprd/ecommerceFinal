@@ -1,0 +1,45 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    color: white;
+    transition: all 0.3s ease;
+    transform-origin: left center;
+    z-index: 1000;
+    transform: rotateY(90deg);
+  }
+  
+  .sidebar.open {
+    left: 0;
+    transform: rotateY(0);
+  }
+  
+  .sidebar-content {
+    padding: 15px;
+  }
+  
+  .sidebar-content h3 {
+    margin-top: 0;
+  }
+  
+  .sidebar-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-content ul li {
+    margin: 10px 0;
+  }
+  
+  .content {
+    margin-left: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .content.shifted {
+    margin-left: 250px;
+  }
+  

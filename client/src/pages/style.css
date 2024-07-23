@@ -1,0 +1,52 @@
+.product-image {
+    width: 100%;
+    height: 200px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Mantiene el aspecto de la imagen */
+  }
+  
+.carousel-edit{
+  width: 100%;
+  height: 250px; /* Ajusta la altura según sea necesario */
+  object-fit: cover
+}
+
+.producto-hover{
+  transition: transform 0.3s ease-in-out
+}
+
+.producto-hover:hover{
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2)
+}
+
+
+.contador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contador span {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.contador button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.contador button:hover {
+  background-color: #eee;
+}
+
+
+
+

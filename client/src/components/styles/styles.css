@@ -1,0 +1,31 @@
+.position-relative{
+    position: relative;
+}
+
+.card-badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+
+.pulse{
+    animation: pulse 1s infinite
+}
+
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
