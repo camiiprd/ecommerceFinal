@@ -1,5 +1,5 @@
 import { pool } from "../../db.js";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { TOKEN_SECRET } from "../../config.js";
 import { createAccesToken } from "../../libs/createAccessToken.js";
@@ -10,7 +10,7 @@ export const registroGeneral = (rol) => {
       const { nombre, apellido, email, DNI, telefono, username, password } =
         req.body;
 
-      const hasheadPassword = await bcrypt.hash(password, 10);
+      const hasheadPassword = await bcryptjs.hash(password, 10);
       // Validas si el usuario existe
       const [rows] = await pool.query(
         "SELECT * FROM Usuarios WHERE username = ?",
@@ -66,7 +66,7 @@ export const loginUsuariosClientes = async (req, res) => {
     }
 
     const storePassword = rows[0].password;
-    const validPassword = await bcrypt.compare(password, storePassword);
+    const validPassword = await bcryptjs.compare(password, storePassword);
 
     if (!validPassword) {
       return res
@@ -142,7 +142,7 @@ export const getIdUsuarios = async (req,res)=>{
 export const updateUsuarios = async (req, res) => {
   try {
     const { rol, nombre, apellido, email, DNI, telefono, username, password } = req.body;
-    const UpdateHasheadPassword = await bcrypt.hash(password, 10);
+    const UpdateHasheadPassword = await bcryptjs.hash(password, 10);
     const { id } = req.params;
     const query = `
      UPDATE usuarios SET rol = ?, nombre = ?, apellido = ?, email = ?, DNI = ?, telefono = ?,
